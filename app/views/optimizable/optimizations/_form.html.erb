@@ -1,0 +1,35 @@
+<%= form_for(@optimization, :url => @optimization.new_record? ? optimizations_path : optimization_path(@optimization)) do |f| %>
+  <% if @optimization.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@optimization.errors.count, "error") %> prohibited this optimization from being saved:</h2>
+
+      <ul>
+      <% @optimization.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%=t(:optimization_for, :scope => :optimizable)%> "<%=@optimization.human_optimizable%>"
+  <div class="field">
+    <%= f.hidden_field :optimizable_id %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :optimizable_type %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size => 100 %>
+  </div>
+
+  <% Optimizable.options.each do |option|%>
+    <div class="field">
+      <%= label_tag "optimizable_optimization[data][#{option}]", option %><br />
+      <%= text_field_tag "optimizable_optimization[data][#{option}]", @optimization.get(option), :size => 100  %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

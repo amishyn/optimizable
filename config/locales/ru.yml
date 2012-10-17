@@ -1,0 +1,31 @@
+ru:
+  optimize_it: 'Оптимизировать'
+  optimizations: Оптимизации
+  optimizations:
+    index: 
+      title: Оптимизации
+    show: 
+      title: Оптимизация
+    edit: 
+      title: Редактирование Оптимизации
+    new: 
+      title: Новая Оптимизация
+  optimizable:
+    show: Просмотреть
+    edit: Редактировать
+    destroy: Удалить
+    back: Назад
+    new: Добавить
+    data: Данные
+    name: Название
+    optimizable_id: Id Оптимизируемого объекта
+    optimizable_type: Тип Оптимизируемого объекта
+  activerecord: 
+    models: 
+      optimization: Оптимизация
+    attributes: 
+      optimization: 
+        name: Название
+        data: Данные
+        optimizable_id: Идентификатор
+        optimizable_type: Тип

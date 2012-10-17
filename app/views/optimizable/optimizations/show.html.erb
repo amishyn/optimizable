@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%=t(:optimizable_id, :scope => :optimizable)%>:</b>
+  <%= @optimization.optimizable_id %>
+</p>
+
+<p>
+  <b><%=t(:optimizable_type, :scope => :optimizable)%>:</b>
+  <%= @optimization.optimizable_type %>
+</p>
+
+<p>
+  <b><%=t(:name, :scope => :optimizable)%>:</b>
+  <%= @optimization.name %>
+</p>
+
+<p>
+  <b><%=t(:data, :scope => :optimizable)%>:</b>
+  <%= @optimization.data %>
+</p>
+
+
+<%= link_to t(:edit, :scope => :optimizable), edit_optimization_path(@optimization) %> |
+<%= link_to t(:back, :scope => :optimizable), optimizations_path %>

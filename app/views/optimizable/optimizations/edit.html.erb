@@ -1,0 +1,6 @@
+<h1><%=t '.title'%></h1>
+
+<%= render 'form' %>
+
+<%= link_to t(:show, :scope => :optimizable), optimization_path(@optimization) %> |
+<%= link_to t(:back, :scope => :optimizable), optimizations_path %>

@@ -1,0 +1,29 @@
+<h1><%=t '.title'%></h1>
+
+<table>
+  <tr>
+    <th><%=t(:optimizable_id, :scope => :optimizable)%></th>
+    <th><%=t(:optimizable_type, :scope => :optimizable)%></th>
+    <th><%=t(:name, :scope => :optimizable)%></th>
+    <th><%=t(:data, :scope => :optimizable)%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @optimizations.each do |optimization| %>
+  <tr>
+    <td><%= optimization.human_optimizable%></td>
+    <td><%= optimization.optimizable_type %>: <%= optimization.optimizable_id %></td>
+    <td><%= optimization.name %></td>
+    <td><%= optimization.data %></td>
+    <td><%= link_to t(:show, :scope => :optimizable), optimization_path(optimization) %></td>
+    <td><%= link_to t(:edit, :scope => :optimizable), edit_optimization_path(optimization) %></td>
+    <td><%= link_to t(:destroy, :scope => :optimizable), optimization_path(optimization), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%#= link_to t(:new, :scope => :optimizable), new_optimization_path %>
